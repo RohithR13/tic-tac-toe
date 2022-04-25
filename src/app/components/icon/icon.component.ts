@@ -11,13 +11,19 @@ export class IconComponent implements OnInit {
 
   @Input() iconName: String;
 
+  @Input() A:String;
+  @Input() R:String;
+
   faPen = faPen;
   faTimes = faR;
   faCircle = faA;
 
+
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

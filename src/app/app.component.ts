@@ -9,6 +9,11 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent {
   title = 'tic-tac-toe';
 
+  playerOne : string  ;
+  playerTwo: string ;
+
+  playerDetail: boolean = false;
+
   winMessage = '';
   isCross = false;
   itemArray: String[] = new Array(9).fill('empty');
@@ -22,7 +27,7 @@ export class AppComponent {
      return  this.toastr.success(this.winMessage);
     }
     if (this.itemArray[itemNumber] === 'empty') {
-      this.itemArray[itemNumber] = this.isCross ? 'R' : 'A';
+      this.itemArray[itemNumber] = this.isCross ? this.playerTwo : this.playerOne;
       this.isCross = !this.isCross;
     } else {
       return this.toastr.info('Already filled');
@@ -88,5 +93,12 @@ export class AppComponent {
   isMovesLeft=()=>{
 
     return this.itemArray.includes("empty")?false:true;
+  }
+
+  isplayerDetail(){
+this.playerOne =this.playerOne;
+this.playerTwo = this.playerTwo;
+    this.playerDetail =!this.playerDetail;
+
   }
 }
