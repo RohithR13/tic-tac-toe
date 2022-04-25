@@ -3,8 +3,8 @@
 
     <div class="col col-lg-6">
       <div class="text-center">
-      <h1 [hidden]="isCross" class="uppercase text-danger">player One Turn</h1>
-      <h1 [hidden]="!isCross" class="uppercase text-danger">player Two Turn</h1>
+      <h1 [hidden]="isCross" class="uppercase text-danger">player A Turn</h1>
+      <h1 [hidden]="!isCross" class="uppercase text-danger">player R Turn</h1>
     </div>
     <div class="grid">
       <div *ngFor="let item of itemArray; index as i ">
@@ -26,7 +26,7 @@
     </div>
 
     <div class="col col-lg-6 text-center" *ngIf="isMovesLeft()">
-      <h1 class="text-uppercase">Game Over No moves left</h1>
+      <h1 class="text-uppercase">No moves left</h1>
       <button
       (click)="reloadGame()"
       class="btn btn-danger text-uppercase pl-5 pr-5">
